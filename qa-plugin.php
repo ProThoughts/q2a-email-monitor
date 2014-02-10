@@ -10,7 +10,7 @@
 	Plugin Author URI: https://github.com/eberta
 	Plugin License: GPLv2
 	Plugin Minimum Question2Answer Version: 1.5
-	Plugin Update Check URI: 
+	Plugin Update Check URI: https://raw.github.com/eberta/q2a-email-monitor/master/qa-plugin.php
 */
 
 if (!defined('QA_VERSION')) { // don't allow this page to be requested directly from browser
