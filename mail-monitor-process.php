@@ -11,8 +11,24 @@
 	require_once QA_INCLUDE_DIR."qa-base.php";
 	
 	
-	function checkEmail(){
+	function getServerAttributes(){
+		$server = qa_opt('mail_monitor_mail_server');
+		$port = qa_opt('mail_monitor_mail_server');
+		$ssl = qa_opt('mail_monitor_mail_ssl');
+		$username = qa_opt('mail_monitor_mail_username');
+		$password = qa_opt('mail_monitor_mail_password');
+		
+		return array($server, $port, $ssl, $username, $password);
+	}
 	
+	function mail_monitor_cronjob() {
+	
+		$serverInfo = getServerAttributes();
+		emailProcess($serverInfo[0], $serverInfo[3], $serverInfo[4]);
+	}
+	
+	function emailProcess($server, $username, $password) {
+		$conn = imap_open ($server, $username, $password);
 	}
 	
 	function performAction() {
